@@ -6,7 +6,9 @@ const router = express.Router();
 
 router.get('/', function(req, res) {
   console.log(`test`)
-    res.render('about');
+    res.render('about',{
+      title: 'A propos',
+    });
   });
 
 

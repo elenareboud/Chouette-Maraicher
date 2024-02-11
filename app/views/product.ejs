@@ -1,0 +1,26 @@
+<%- include ('partials/header') %>
+    <main class="page-content">
+        <h1 class="page-title"><%= title %></h1>
+        <div class="page-main">
+            <section class="segment">
+                <article class="detail">
+                    <img class="detail-img" src="./img/products/<%= title %>.jpg"
+                        alt="">
+                    <div class="detail-content">
+                        <h2><%- title %> : détails</h2>
+                        <h3>Catégories</h3>
+                        <p><a class="btn" href="">Fruits</a></p>
+                        <h3>Description</h3>
+                        <p><%= description %></p>
+                        <h3>Note</h3>
+                        <p><span class="detail-grade" aria-hidden="true">&#9733;
+                                &#9733; &#9733; &#9733; &#9734;</span>4/5</p>
+                        <footer class="detail-action">
+                            <p>Retour <a class="btn" href="/about">Accueil</a> ou
+                                rayon <a class="btn" href="">Fruits</a></p>
+                        </footer>
+                    </div>
+                </article>
+            </section>
+            <aside class="segment">
+                <%- include ('partials/footer') %>

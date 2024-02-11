@@ -1,0 +1,31 @@
+{
+  "name": "s06e09-atelier-maraicher-elenareboud",
+  "version": "1.0.0",
+  "description": "Aujourd'hui tu vas devoir réaliser un site dynamique pour présenter les fruits et légumes de _Chouette Maraîcher_",
+  "main": "index.js",
+  "type": "module",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node index",
+    "dev": "node-dev index --clear --notify=false"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/O-clock-DWA-Session1/S06E09-atelier-maraicher-elenareboud.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/O-clock-DWA-Session1/S06E09-atelier-maraicher-elenareboud/issues"
+  },
+  "homepage": "https://github.com/O-clock-DWA-Session1/S06E09-atelier-maraicher-elenareboud#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "node-dev": "^8.0.0"
+  }
+}

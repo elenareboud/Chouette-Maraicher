@@ -1,12 +1,17 @@
-import products from '../data.js';
+import client from '../database.js';
 
 const mainController = {
-  home: function(req, res) {
-  // home(req, res) { // notation raccourcie: le :function est optionnel
-    res.render('list', { 
-      products, // products: products en abrégé
-      title: 'Au Chouette Maraîcher',
-    }); 
+  home: async function(req, res) {
+    try {
+      const result = await client.query('SELECT * FROM product ORDER BY title');
+      res.render('list', { 
+        products: result.rows, 
+        title: 'Au Chouette Maraîcher',
+      }); 
+    } catch (error) {
+      console.error(error);
+      res.status(500).render('error-500');
+    }
   },
   
   about: function(req, res) {

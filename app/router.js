@@ -1,44 +1,14 @@
 import express from 'express';
-import products from './data.js';
+import mainController from './controllers/mainController.js';
+import productController from './controllers/productController.js';
 
 const router = express.Router();
 
+router.get('/', mainController.home);
+router.get('/a-propos', mainController.about);
+router.get('/produit/:slug', productController.detail);
+router.get('/product/best', productController.best);
+router.get('/rayon/:name', productController.category);
+router.get('/rayons', productController.allCategories);
 
-
-router.get('/', function(req, res) {
-      res.render('list',{
-      seoTitle: `Au Chouette Maraîcher`,
-      
-    });  
-    
-  });
-
-router.get('/about', function(req, res) {
-  
-      res.render('about',{
-      seoTitle: 'A propos',
-      });
-    });
-
-router.get('/:slug', function(req, res, next) {
-  const slug = req.params.slug;
-  console.log(slug);
-  const product = products.find(element => element.slug === slug);
-  
-
-    if(product){
-    res.render('product',{
-      seoTitle: `Au Chouette Maraîcher`,
-      title: product.title,
-      description: product.description,
-      
-    }); 
-  } 
-  else {
-    next();
-  }
-  });
-
-
-
-  export default router; 
+export default router;
